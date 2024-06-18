@@ -8,3 +8,6 @@ response = requests.get(url)
 
 print("STATUS: ", response.status_code)
 print(response.json())
+data = response.json()
+
+print(data['pageInfo']['resultsPerPage'])

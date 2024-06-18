@@ -8,7 +8,3 @@ response = requests.get(url)
 
 print("STATUS: ", response.status_code)
 print(response.json())
-#Done
-
-
-

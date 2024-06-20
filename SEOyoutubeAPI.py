@@ -16,8 +16,24 @@ if video_url == 'd':
 else:  #else extract the id from the user's URL
     video_id = video_url[32:]
 
+#Set valid varilabe to keep loop until a valid response is given
+valid = False
+filter = "" #initilaize filter variable
+
+
+while valid == False:
+    sorted_order = input("Enter a way to sort the comments, use 't' to filter by the most recent comments or 'r' to filter by relevance: ")
+    if (sorted_order == 't'): #if sorted input is t sort by time
+        filter = "time"
+        valid = True
+    elif (sorted_order == "r"): #if sorted input is r sort by relevance
+        filter = "relevance"
+        valid = True
+    else: #else keep running the loop until a valid response is given
+        print("Invalid sorting method please enter either 't' or 'r'")
+
 #use the id and API key to set a GET request for the comments
-url = f"https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId={video_id}&key={API_KEY}&maxResults=20"
+url = f"https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId={video_id}&key={API_KEY}&maxResults=20&order={filter}"
 response = requests.get(url)
 
 #print the status of the request

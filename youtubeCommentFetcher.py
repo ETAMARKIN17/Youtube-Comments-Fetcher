@@ -6,6 +6,7 @@ import pandas as pd
 API_KEY = "AIzaSyD1AsmB66YJl8RN-YDHbWHBclTBDsjFkDY"
 default_id = "X8VuIq4j1bo"
 
+
 # function to get the key word to search
 def get_key_word():
     while True:
@@ -18,6 +19,7 @@ def get_key_word():
             return None
         else:
             print("Invalid response. Enter either 'y' or 'n'.")
+
 
 # function to get the sorting method
 def get_sorting_method():

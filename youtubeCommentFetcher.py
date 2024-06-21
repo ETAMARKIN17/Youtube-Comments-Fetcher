@@ -34,15 +34,21 @@ def get_sorting_method():
             print("Invalid sorting method. Enter 't' or 'r'.")
 
 
-# get a video URL from the user to extract the id
-video_id = ""
-video_url = input("Enter a Youtube video URL, type 'd' to use the default video: ")
+# function to get video id
+def get_video_id(default_id):
+    while True:
+        video_url = input("Enter a Youtube video URL, type 'd' to use the default video: ")
+        if video_url == 'd':
+            return default_id
+        elif len(video_url) != 43:
+            print("Invalid url, try again")
+        else:
+            video_id = video_url[32:]
+            return video_id
 
-# if the user inputs 'd', use the default video
-if video_url == 'd':
-    video_id = default_id
-else:  # else extract the id from the user's URL
-    video_id = video_url[32:]
+
+# get video id
+video_id = get_video_id(default_id)
 
 # prompt the user for a key word
 key_word = get_key_word()

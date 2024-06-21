@@ -6,12 +6,12 @@ import pandas as pd
 API_KEY = "AIzaSyD1AsmB66YJl8RN-YDHbWHBclTBDsjFkDY"
 default_id = "X8VuIq4j1bo"
 
-
 # function to get the key word to search
 def get_key_word():
     while True:
-        search_on_word = input("Would you like to filter based on any key word(s)? type 'y' for yes or 'n' for no: ")
-        if (search_on_word == 'y'): 
+        search_on_word = input(
+            "Would you like to filter based on any key word(s)? type 'y' for yes or 'n' for no: ")
+        if (search_on_word == 'y'):
             key_word = input("Enter the desired key word to search for: ")
             return key_word
         elif search_on_word == 'n':
@@ -19,17 +19,18 @@ def get_key_word():
         else:
             print("Invalid response. Enter either 'y' or 'n'.")
 
-
 # function to get the sorting method
 def get_sorting_method():
     while True:
-        sorted_order = input("Enter 't' to filter by the most recent comments or 'r' to filter by relevance: ")
-        if sorted_order == 't': 
+        sorted_order = input(
+            "Enter 't' to filter by the most recent comments or 'r' to filter by relevance: ")
+        if sorted_order == 't':
             return "time"
         elif sorted_order == "r":
             return "relevance"
         else:
             print("Invalid sorting method. Enter 't' or 'r'.")
+
 
 # get a video URL from the user to extract the id
 video_id = ""
@@ -46,7 +47,6 @@ key_word = get_key_word()
 
 # get sorting method
 filter = get_sorting_method()
-
 
 # construct the API request URL based on user inputs
 if key_word:

@@ -1,7 +1,7 @@
 '''
-Add to here later for now my functions cannot be 
+Add to here later for now my functions cannot be
 tested with this method as they do not take
-any parameters but I am setting it up now for 
+any parameters but I am setting it up now for
 easy future access
 
 THE CODE IS BELOW:

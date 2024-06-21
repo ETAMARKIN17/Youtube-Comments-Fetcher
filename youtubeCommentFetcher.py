@@ -6,32 +6,28 @@ import pandas as pd
 API_KEY = "AIzaSyD1AsmB66YJl8RN-YDHbWHBclTBDsjFkDY"
 default_id = "X8VuIq4j1bo"
 
+
 # function to get the key word to search
 def get_key_word():
-    while True: # loop until a valid response is given
+    while True:
         search_on_word = input("Would you like to filter based on any key word(s)? type 'y' for yes or 'n' for no: ")
-        # if the user wants to search by a key word get the word
         if (search_on_word == 'y'): 
             key_word = input("Enter the desired key word to search for: ")
             return key_word
-        # if the user does not want to search by a key word return none
         elif search_on_word == 'n':
             return None
-        # else keep running the loop until a valid response is given
         else:
             print("Invalid response. Enter either 'y' or 'n'.")
 
+
 # function to get the sorting method
 def get_sorting_method():
-    while True: # loop until a valid response is given
+    while True:
         sorted_order = input("Enter 't' to filter by the most recent comments or 'r' to filter by relevance: ")
-        # if sorted input is t sort by time
         if sorted_order == 't': 
             return "time"
-        # if sorted input is r sort by relevance
         elif sorted_order == "r":
             return "relevance"
-        # else keep running the loop until a valid response is given
         else:
             print("Invalid sorting method. Enter 't' or 'r'.")
 
@@ -67,7 +63,7 @@ data = response.json()
 
 # check if the request was successful
 if response.status_code == 200:
-    # initialize lists to store the data I want to keep
+    # initialize lists to store the data to keep
     comments = []
     authors = []
     published = []
